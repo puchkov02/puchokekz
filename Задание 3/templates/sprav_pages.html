@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Справочная таблица - homes{% endblock %}
+{% block body %}
+<h1>Справочная таблица - homes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>home_id</th>
+      <th>address</th>
+      <th>year_of_construction</th>
+      <th>rooms_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for home in homes_data %}
+    <tr>
+      <td>{{ home[0] }}</td>
+      <td>{{ home[1] }}</td>
+      <td>{{ home[2] }}</td>
+      <td>{{ home[3] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h1>Справочная таблица - categorii_zhalob</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>categori_id</th>
+      <th>categori_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for categorii_zhalob in categorii_zhalob_data %}
+    <tr>
+      <td>{{ categorii_zhalob[0] }}</td>
+      <td>{{ categorii_zhalob[1] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h1>Справочная таблица - status_categorii</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>status_id</th>
+      <th>status_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for status_categorii in status_categorii_data %}
+    <tr>
+      <td>{{ status_categorii[0] }}</td>
+      <td>{{ status_categorii[1] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="{{ url_for('index') }}">Вернуться на главную страницу</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Целевая таблица - zhalobi{% endblock %}
+{% block body %}
+<h1>Целевая таблица - zhalobi</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>zhalobi_id</th>
+      <th>home_id</th>
+      <th>zhaloba</th>
+      <th>date</th>
+      <th>room_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for zhalobi in zhalobi_data %}
+    <tr>
+      <td>{{ zhalobi[0] }}</td>
+      <td>{{ zhalobi[1] }}</td>
+      <td>{{ zhalobi[2] }}</td>
+      <td>{{ zhalobi[3] }}</td>
+      <td>{{ zhalobi[4] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="{{ url_for('index') }}">Вернуться на главную страницу</a>
+{% endblock %}
