@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Визитная карточка</title>
+  <title>Визитная карточка</title>
 </head>
 <body>
-<h1>Визитная карточка</h1>
-<form>
-<label for="fullname">ФИО:</label>
-<input type="text" id="fullname" name="fullname"><br><br>
+  <h1>Визитная карточка</h1>
+  <form>
+    <label for="fullname">ФИО:</label>
+    <input type="text" id="fullname" name="fullname"><br><br>
 
-<label for="birthdate">Дата рождения:</label>
-<input type="date" id="birthdate" name="birthdate"><br><br>
+    <label for="birthdate">Дата рождения:</label>
+    <input type="date" id="birthdate" name="birthdate"><br><br>
 
-<label for="studentid">Номер зачетки:</label>
-<input type="text" id="studentid" name="studentid"><br><br>
+    <label for="studentid">Номер зачетки:</label>
+    <input type="text" id="studentid" name="studentid"><br><br>
 
-<label for="gender">Пол:</label>
-<input type="radio" id="male" name="gender" value="Мужской">
-<label for="male">Мужской</label>
-<input type="radio" id="female" name="gender" value="Женский">
-<label for="female">Женский</label><br><br>
+    <label for="gender">Пол:</label>
+    <input type="radio" id="male" name="gender" value="Мужской">
+    <label for="male">Мужской</label>
+    <input type="radio" id="female" name="gender" value="Женский">
+    <label for="female">Женский</label><br><br>
 
-<label for="email">Email:</label>
-<input type="email" id="email" name="email"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
 
-<label for="grade">Оценка:</label>
-<select id="grade" name="grade">
-<option value="Отлично">Отлично</option>
-<option value="Хорошо">Хорошо</option>
-<option value="Удовлетворительно">Удовлетворительно</option>
-<option value="Неудовлетворительно">Неудовлетворительно</option>
-</select><br><br>
+    <label for="grade">Оценка:</label>
+    <select id="grade" name="grade">
+      <option value="Отлично">Отлично</option>
+      <option value="Хорошо">Хорошо</option>
+      <option value="Удовлетворительно">Удовлетворительно</option>
+      <option value="Неудовлетворительно">Неудовлетворительно</option>
+    </select><br><br>
 
-<input type="button" value="Создать визитку" onclick="createCard()">
-</form>
+    <input type="button" value="Создать визитку" onclick="createCard()">
+  </form>
 
-<div id="cardResult"></div>
+  <div id="cardResult"></div>
 
-<script>
-function createCard() {
-var fullname = document.getElementById("fullname").value;
-var birthdate = document.getElementById("birthdate").value;
-var studentid = document.getElementById("studentid").value;
-var gender = document.querySelector('input[name="gender"]:checked').value;
-var email = document.getElementById("email").value;
-var grade = document.getElementById("grade").value;
+  <script>
+    function createCard() {
+      var fullname = document.getElementById("fullname").value;
+      var birthdate = document.getElementById("birthdate").value;
+      var studentid = document.getElementById("studentid").value;
+      var gender = document.querySelector('input[name="gender"]:checked').value;
+      var email = document.getElementById("email").value;
+      var grade = document.getElementById("grade").value;
 
-var cardContent = "<h2>Визитная карточка</h2>";
-cardContent += "<p>ФИО: " + fullname + "</p>";
-cardContent += "<p>Дата рождения: " + birthdate + "</p>";
-cardContent += "<p>Номер зачетки: " + studentid + "</p>";
-cardContent += "<p>Пол: " + gender + "</p>";
-cardContent += "<p>Email: " + email + "</p>";
-cardContent += "<p>Оценка: " + grade + "</p>";
+      var cardContent = "<h2>Визитная карточка</h2>";
+      cardContent += "<p>ФИО: " + fullname + "</p>";
+      cardContent += "<p>Дата рождения: " + birthdate + "</p>";
+      cardContent += "<p>Номер зачетки: " + studentid + "</p>";
+      cardContent += "<p>Пол: " + gender + "</p>";
+      cardContent += "<p>Email: " + email + "</p>";
+      cardContent += "<p>Оценка: " + grade + "</p>";
 
-document.getElementById("cardResult").innerHTML = cardContent;
-}
-</script>
+      document.getElementById("cardResult").innerHTML = cardContent;
+    }
+  </script>
 </body>
 </html>
